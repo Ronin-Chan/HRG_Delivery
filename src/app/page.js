@@ -60,7 +60,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl mx-auto">
-              Engage, discuss and learn the UN's 30 Articles through an interactive online experience—perfect for classrooms and youth groups.
+              Engage, discuss and learn the UN&apos;s 30 Articles through an interactive online experience—perfect for classrooms and youth groups.
             </p>
             <motion.a
               href="#download"
