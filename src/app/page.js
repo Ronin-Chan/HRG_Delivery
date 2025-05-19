@@ -13,6 +13,8 @@ import {
   Clock,
   DownloadCloud,
   ChevronDown,
+  Code,
+  FileText,
 } from 'lucide-react'
 import EarthCanvas from '../components/canvas/Earth'
 
@@ -295,13 +297,13 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
           transition={{ duration: 0.6 }}
-          className="relative z-10"
+          className="relative z-10 max-w-xl mx-auto px-6 lg:px-8"
         >
-          <MaxWidthWrapper className="max-w-md mx-auto bg-black/70 p-8 rounded-3xl shadow-2xl ring-1 ring-gray-700 text-gray-300">
-            <h2 className="text-2xl font-bold text-white text-center mb-4">
+          <MaxWidthWrapper className="bg-black/70 p-8 rounded-3xl shadow-2xl ring-1 ring-gray-700 text-gray-300">
+            <h2 className="text-2xl font-bold text-white text-center mb-6">
               Download Digital Version
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto">
               <div>
                 <Label
                   htmlFor="access-code"
@@ -329,68 +331,87 @@ export default function Home() {
                 })}
               >
                 <DownloadCloud className="inline h-5 w-5 mr-2 animate-pulse" />
-                Unlock Download
+                Unlock Downloads
               </button>
             </form>
 
             {authorized && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="mt-6 text-center"
-              >
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 text-center">
                 <a
                   href="/game-pic.jpg"
                   download
-                  className={buttonVariants({
-                    size: 'lg',
-                    className:
-                      'w-full bg-pink-600 hover:bg-pink-500 text-white shadow-lg ring-1 ring-pink-400',
-                  })}
+                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
                 >
-                  Download Now
+                  <Code className="h-12 w-12 text-pink-500" />
+                  <span className="mt-4 text-md font-semibold text-white">
+                    Executable File
+                  </span>
                 </a>
-                <p className="mt-2 text-sm text-gray-400">
-                  Thank you! You are available to download now
-                </p>
-                <p className='mt-2 text-sm text-gray-400'>For better deployment experience, please see instruction below</p>
-              </motion.div>
+                <a
+                  href="/game-pic.jpg"
+                  download
+                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                >
+                  <FileText className="h-12 w-12 text-purple-500" />
+                  <span className="mt-4 text-md font-semibold text-white">
+                    Deployment Instruction
+                  </span>
+                </a>
+                <a
+                  href="/game-pic.jpg"
+                  download
+                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                >
+                  <BookOpen className="h-12 w-12 text-green-700" />
+                  <span className="mt-4 text-md font-semibold text-white">
+                    User Guide
+                  </span>
+                </a>
+              </div>
             )}
           </MaxWidthWrapper>
         </motion.section>
       </div>
 
+      {/* FAQ */}
       {authorized && (
-        <motion.section
-          id="deploy-instruction"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
-          className="py-16 bg-gray-950 text-gray-200"
-        >
+        <section id="faq" className="py-16 bg-gray-900 text-gray-200">
           <MaxWidthWrapper className="space-y-6 px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-white text-center">
-              Deployment Instruction
+            <h2 className="text-3xl font-bold text-white text-center mb-6">
+              FAQ
             </h2>
-            <ol className="list-decimal list-inside space-y-2">
-              <li>
-                <strong>HRG:</strong>{' '}
-                <code>xxx</code>
-              </li>
-              <li>
-                <strong>HRG:</strong>{' '}
-                <code>xxx</code>
-              </li>
-              <li>
-                <strong>HRG:</strong>{' '}
-                <code>xxx</code>
-              </li>
-            </ol>
+            <div className="space-y-6 text-left">
+              <div>
+                <h3 className="text-xl font-semibold">
+                  What is The Human Rights Game?
+                </h3>
+                <p>
+                  This interactive digital edition helps learners engage with
+                  the UN&apos;s 30 Articles through realistic scenarios and
+                  guided discussions.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">
+                  How long does gameplay take?
+                </h3>
+                <p>
+                  Sessions typically run 40-60 minutes, making it perfect for
+                  classrooms or youth workshops.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">
+                  Can I customise scenarios?
+                </h3>
+                <p>
+                  Yes—downloadable scenario packs let you tailor the experience
+                  to your group’s interests and age range.
+                </p>
+              </div>
+            </div>
           </MaxWidthWrapper>
-        </motion.section>
+        </section>
       )}
 
       <footer className="py-4 text-center text-gray-300 bg-gray-950">
