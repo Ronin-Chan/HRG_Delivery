@@ -352,8 +352,9 @@ export default function Home() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden"
                 >
                   <a
-                    href="/hrg_macOS.zip"
+                    href="https://pan.quark.cn/s/8ac5349ba1d8"
                     download
+                    target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
                   >
                     <Apple className="h-12 w-12 text-pink-500" />
@@ -362,8 +363,9 @@ export default function Home() {
                     </span>
                   </a>
                   <a
-                    href="/hrg_windows.zip"
+                    href="https://pan.quark.cn/s/933e36f75f5b"
                     download
+                    target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
                   >
                     <Grid2x2 className="h-12 w-12 text-blue-500" />
