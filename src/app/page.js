@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import MaxWidthWrapper from '../components/MaxWidthWrapper'
 import { buttonVariants } from '../components/ui/button'
 import { Input } from '../components/ui/input'
@@ -13,10 +13,16 @@ import {
   Clock,
   DownloadCloud,
   ChevronDown,
-  Code,
+  Grid2x2,
+  Apple,
   FileText,
 } from 'lucide-react'
 import EarthCanvas from '../components/canvas/Earth'
+
+const expandVariants = {
+  hidden: { height: 0, opacity: 0 },
+  visible: { height: 'auto', opacity: 1 }
+};
 
 export default function Home() {
   const [code, setCode] = useState('')
@@ -335,40 +341,59 @@ export default function Home() {
               </button>
             </form>
 
-            {authorized && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 text-center">
-                <a
-                  href="/game-pic.jpg"
-                  download
-                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+            <AnimatePresence initial={false}>
+              {authorized && (
+                <motion.div
+                  variants={expandVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden"
                 >
-                  <Code className="h-12 w-12 text-pink-500" />
-                  <span className="mt-4 text-md font-semibold text-white">
-                    Executable File
-                  </span>
-                </a>
-                <a
-                  href="/game-pic.jpg"
-                  download
-                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
-                >
-                  <FileText className="h-12 w-12 text-purple-500" />
-                  <span className="mt-4 text-md font-semibold text-white">
-                    Deployment Instruction
-                  </span>
-                </a>
-                <a
-                  href="/game-pic.jpg"
-                  download
-                  className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
-                >
-                  <BookOpen className="h-12 w-12 text-green-700" />
-                  <span className="mt-4 text-md font-semibold text-white">
-                    User Guide
-                  </span>
-                </a>
-              </div>
-            )}
+                  <a
+                    href="/hrg_macOS.zip"
+                    download
+                    className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                  >
+                    <Apple className="h-12 w-12 text-pink-500" />
+                    <span className="mt-4 text-md font-semibold text-white">
+                      Game File <br /> (macOS)
+                    </span>
+                  </a>
+                  <a
+                    href="/hrg_windows.zip"
+                    download
+                    className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                  >
+                    <Grid2x2 className="h-12 w-12 text-blue-500" />
+                    <span className="mt-4 text-md font-semibold text-white">
+                      Game File <br /> (Windows)
+                    </span>
+                  </a>
+                  <a
+                    href="/game-pic.jpg"
+                    download
+                    className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                  >
+                    <FileText className="h-12 w-12 text-purple-500" />
+                    <span className="mt-4 text-md font-semibold text-white">
+                      Deployment <br /> Instruction
+                    </span>
+                  </a>
+                  <a
+                    href="/game-pic.jpg"
+                    download
+                    className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                  >
+                    <BookOpen className="h-12 w-12 text-green-700" />
+                    <span className="mt-4 text-md font-semibold text-white">
+                      User <br /> Guide
+                    </span>
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </MaxWidthWrapper>
         </motion.section>
       </div>
