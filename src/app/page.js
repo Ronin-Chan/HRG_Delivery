@@ -349,7 +349,7 @@ export default function Home() {
                   animate="visible"
                   exit="hidden"
                   transition={{ duration: 0.6, ease: 'easeInOut' }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden p-2"
                 >
                   <a
                     href="https://pan.quark.cn/s/8ac5349ba1d8"
@@ -374,7 +374,7 @@ export default function Home() {
                     </span>
                   </a>
                   <a
-                    href="/game-pic.jpg"
+                    href="/Deployment_Insturction.md"
                     download
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
                   >
