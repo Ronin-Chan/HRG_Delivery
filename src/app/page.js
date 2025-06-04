@@ -352,7 +352,7 @@ export default function Home() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden p-2"
                 >
                   <a
-                    href="https://pan.quark.cn/s/8ac5349ba1d8"
+                    href="https://drive.google.com/file/d/1cr0Fox9IC127_Vkyk2yCxivLC9a27jj6/view?usp=sharing"
                     download
                     target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
@@ -363,7 +363,7 @@ export default function Home() {
                     </span>
                   </a>
                   <a
-                    href="https://pan.quark.cn/s/933e36f75f5b"
+                    href="https://drive.google.com/file/d/1xAfsO7bIDDjVVG8RZEMZaHeEdfSKz8xa/view?usp=sharing"
                     download
                     target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
