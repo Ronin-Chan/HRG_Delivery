@@ -16,6 +16,7 @@ import {
   Grid2x2,
   Apple,
   FileText,
+  Database
 } from 'lucide-react'
 import EarthCanvas from '../components/canvas/Earth'
 
@@ -352,7 +353,7 @@ export default function Home() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 text-center overflow-hidden p-2"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1cr0Fox9IC127_Vkyk2yCxivLC9a27jj6/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1wTvLG938V5QSHiUKf4KACW8gjgEKLlBH/view?usp=sharing"
                     download
                     target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
@@ -363,7 +364,7 @@ export default function Home() {
                     </span>
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1xAfsO7bIDDjVVG8RZEMZaHeEdfSKz8xa/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1VjoXevtGeNU-SuIxmScDiq50yLj4_cyo/view?usp=sharing"
                     download
                     target="_blank"
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
@@ -384,7 +385,17 @@ export default function Home() {
                     </span>
                   </a>
                   <a
-                    href="/game-pic.jpg"
+                    href="/public.sql"
+                    download
+                    className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
+                  >
+                    <Database className="h-12 w-12 text-yellow-500" />
+                    <span className="mt-4 text-md font-semibold text-white">
+                      SQL <br /> File
+                    </span>
+                  </a>
+                  <a
+                    href="/User Guide.pdf"
                     download
                     className="flex flex-col items-center p-4 bg-gray-800 rounded-2xl hover:bg-gray-700 transition transform hover:scale-105"
                   >
